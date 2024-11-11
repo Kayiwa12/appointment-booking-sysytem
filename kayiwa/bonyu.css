@@ -1,0 +1,264 @@
+/* Pop-up modal */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.time-btn {
+    background-color: #047f20;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.time-btn:hover {
+    background-color: #f79617;
+}
+
+.close-popup {
+    background-color: #f79617;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Thank you message */
+.thank-you-msg {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #047f20;
+}
+
+.thank-you-msg p {
+    font-size: 18px;
+    color: #047f20;
+}
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+}
+/* utility classes */
+h1,h2,h3{
+    padding-bottom: 20px;
+}
+
+p{
+    margin: 10px 0px;
+}
+
+.py-1{padding:10px 0px}
+.py-2{padding:20px 0px}
+.py-3{padding:30px 0px}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+}
+
+.container{
+    width:1100px;
+    margin:auto;
+    overflow: auto;
+    padding:0px 20px;
+}
+
+#show-case{
+    background: url('./img/sys-bg.jpg')no-repeat center center/cover;
+    height: 610px;
+    overflow: auto;
+}
+
+
+
+#show-case ul{
+    list-style: none;
+}
+
+.clr{
+    clear: both;
+}
+
+#show-case li{
+    float:left;
+    font-size: 18px;
+}
+
+#show-case ul li a{
+    display: block;
+    color: #fff;
+    padding: 12px 0px;
+}
+
+.show-case-content{
+    width:80%;
+    color:#fff;
+    border-left: 2px #f79617 solid;
+    padding:30px 30px;
+    margin-right: 350px;
+}
+
+.show-case-content .main-heading{
+    color:#f79617;
+    font-size: 37px;
+
+}
+
+.btn{
+    padding:12px 20px;
+    font-size: 18px;
+    margin-top: 30px;
+    background-color: #047f20;
+    color: #fff;
+    transition: 0.4s ease-in;
+}
+
+.btn:hover{
+    background-color: #f79617;
+    color:#fff;
+    transform: scale(1.1);
+}
+
+.container-1{
+    width:1100px;
+    margin: auto;
+    padding:0px 20px;
+    padding-top: 100px;
+}
+
+/* book page */
+#reg-form{
+    text-align: center;
+    background: #05082c;
+    height: 609px;
+}
+
+.sub-heading{
+    border: #f79617 2px solid;
+    margin:auto;
+    padding: 10px 0px;
+    width: 500px;
+    border-radius: 5.5px;
+}
+
+.sub-heading h1{
+    padding: 0px;
+    margin: 0px;
+    color:#fff;
+}
+
+.form-wrapper{
+    background-color: #fff;
+    padding:10px;
+    margin-top: 30px;
+    border-radius: 5.5px;
+    
+}
+
+.group{
+    margin-bottom: 40px;
+}
+
+.group #lastname{
+    margin-right: 60px;
+
+}
+
+.group input{
+    padding:19px 20px;
+    width: 350px;
+    border: 1px #f79617 solid;
+    border-radius: 6px;
+    
+    
+}
+
+form .btn{
+    width:86.5%;
+    padding:12px 20px;
+    background-color: #047f20;
+    color:#fff;
+    border-radius: 5.5px;
+    margin-top: 5px;
+}
+
+.container-4{
+   max-width:1100px;
+    padding:20px 100px;
+    margin: auto;
+    
+}
+
+.show-case-content .btn a{
+    color:#fff;
+}
+
+.small-head{
+    color:#047f20;
+    font-size: 22px;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+}
+
+.group select{
+    padding:19px 30px;
+    border: 1px #f79617 solid;
+    border-radius: 5.5px;
+    width:350px;
+}
+
+input::placeholder{
+    font-size: 17px;
+}
+
+select option[disabled]{
+    font-size:17px;
+    color: #ccc;
+}
+
+#form-group-3 date{
+    font-size: 20px;
+}
+
+i{
+    color:#fff;
+    float:left;
+    margin-right: 20px;
+    
+}
+
+.btn a{
+color: #fff;
+}

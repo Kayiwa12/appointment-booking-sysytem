@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="book your slot">
+    <meta name="keywords" content="booking, registration slot, RSB">
+    <script src="https://kit.fontawesome.com/1166c4730c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bonyu.css">
+    <title>Booking | book</title>
+</head>
+<body>
+   <section id="reg-form" class="py-3">
+    <div class="container-4">
+        <ul>
+            <a href="index.html"><i class="fa-solid fa-house fa-2x"></i></a></i>
+        </ul>
+        <div class="sub-heading"><h1>Registration Slot Booking System</h1></div>
+        <div class="form-wrapper">
+            <p class="small-head">Enter your information to reserve a slot</p>
+            <form id="booking-form" action="process.php" method="post">
+                <div id="form-group-1" class="group">
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                </div>
+                <div id="form-group-2" class="group">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div id="form-group-3" class="group">
+                    <input type="date" name="date" id="date" placeholder="Date" required>
+                    <select name="education_level" required>
+                        <option value="" disabled selected>Education level</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="postgraduate">Postgraduate</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+                <button type="button" class="btn" id="reserve-slot-btn">Reserve a Slot</button>
+            </form>
+        </div>
+    </div>
+   </section>
+
+   <!-- Pop-up Modal for Time Selection -->
+   <div id="time-popup" class="popup-overlay">
+      <div class="popup-content">
+         <h2>Select a Time</h2>
+         <button class="time-btn" data-time="8:00am">8:00am</button>
+         <button class="time-btn" data-time="9:00am">9:00am</button>
+         <button class="time-btn" data-time="10:00am">10:00am</button>
+         <button class="time-btn" data-time="11:00am">11:00am</button>
+         <button class="time-btn" data-time="12:00pm">12:00pm</button>
+         <button class="close-popup" onclick="closePopup()">Close</button>
+      </div>
+   </div>
+
+   <!-- Thank You Notification -->
+   <div id="thank-you-msg" class="thank-you-msg" style="display: none;">
+       <p>Thank you <span id="user-name"></span> for booking an appointment. Please wait for the confirmation email.</p>
+       <button class="btn" onclick="window.location.href='index.html'">Go to Home</button>
+   </div>
+
+   <script>
+      // Show the pop-up when the Reserve a Slot button is clicked
+      document.getElementById('reserve-slot-btn').addEventListener('click', function() {
+         document.getElementById('time-popup').style.display = 'block';
+      });
+
+      // Close the pop-up
+      function closePopup() {
+         document.getElementById('time-popup').style.display = 'none';
+      }
+
+      // Handle the selection of a time
+      const timeButtons = document.querySelectorAll('.time-btn');
+      timeButtons.forEach(button => {
+         button.addEventListener('click', function() {
+            const selectedTime = this.getAttribute('data-time');
+            const form = document.getElementById('booking-form');
+            
+            // Create a hidden input field to store the selected time
+            const timeInput = document.createElement('input');
+            timeInput.type = 'hidden';
+            timeInput.name = 'time';
+            timeInput.value = selectedTime;
+            form.appendChild(timeInput);
+
+            // Show the thank you message
+            document.getElementById('time-popup').style.display = 'none';
+            document.getElementById('thank-you-msg').style.display = 'block';
+            document.getElementById('user-name').textContent = form.firstname.value;
+
+            // Submit the form after showing the message
+            setTimeout(function() {
+                form.submit();
+            }, 3000); // Delay the submission for 3 seconds
+         });
+      });
+   </script>
+</body>
+</html>
